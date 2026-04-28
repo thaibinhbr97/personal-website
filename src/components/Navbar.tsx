@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const NAV_LINKS = [
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
+    { label: "Education", href: "#education" },
     { label: "Projects", href: "#projects" },
     { label: "Skills", href: "#skills" },
 ];
@@ -96,7 +97,7 @@ export default function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="https://drive.google.com/file/d/12mDuWq2xzXC2uoMKzMfKVK0GOpXjsFxf/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1r76_3zT7xXeOZ8TLmdXoZT_j4kchtCBW/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary"

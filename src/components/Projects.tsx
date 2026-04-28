@@ -202,7 +202,7 @@ export default function Projects() {
                         transition: "opacity 0.7s ease, transform 0.7s ease",
                     }}
                 >
-                    <p className="section-label">03 — Projects</p>
+                    <p className="section-label">04 — Projects</p>
                     <h2
                         style={{
                             fontSize: "clamp(2.5rem, 5vw, 4rem)",

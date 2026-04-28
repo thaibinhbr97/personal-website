@@ -16,7 +16,7 @@ const JOBS: Job[] = [
         role: "Software Engineer",
         company: "MapD / nextech3d.ai",
         location: "Toronto, ON",
-        period: "Dec 2022 – Apr 2024",
+        period: "2022 – 2024",
         bullets: [
             "Migrated PHP backend to a scalable microservices architecture utilizing Java, Spring Boot, PostgreSQL, and Docker, reducing client-server latency by 400% relative to legacy REST API.",
             "Optimized and deployed PostgreSQL databases on Azure, implementing replication and indexing strategies that scaled token-based reward distribution to thousands of event attendees with high performance and reliability.",
@@ -31,7 +31,7 @@ const JOBS: Job[] = [
         role: "Web Developer",
         company: "ARitize3D / NexTech AR Solutions",
         location: "Toronto, ON",
-        period: "Nov 2021 – Nov 2022",
+        period: "2021",
         bullets: [
             "Designed, developed, and maintained a full-stack web application using React, Django, and MySQL, enabling 10,000+ monthly active users to generate 3D models with computational geometry and Generative AI.",
             "Wrote automation scripts and optimized web scraping processes for 30,000+ SKUs, accelerating production speed by 140% and reducing delivery time by 40%.",
