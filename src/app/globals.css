@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+@theme {
+    --color-bg-primary: #F4F1E8;
+    /* Light cream/beige from reference */
+    --color-bg-secondary: #EBE7D9;
+    --color-bg-card: #ffffff;
+    --color-accent: #1D4D4F;
+    /* Dark teal green from reference */
+    --color-accent-soft: rgba(29, 77, 79, 0.08);
+    --color-text-primary: #1D4D4F;
+    /* Using the dark teal for primary text */
+    --color-text-secondary: #4B6364;
+    /* Muted gray-green */
+    --color-text-muted: #8A9A9B;
+    --color-border: rgba(29, 77, 79, 0.1);
+    --color-border-hover: rgba(29, 77, 79, 0.3);
+
+    --font-sans: 'Inter', system-ui, sans-serif;
+
+    --shadow-card: 0 2px 12px rgba(29, 77, 79, 0.05);
+}
+
+@layer base {
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
+    }
+
+    body {
+        font-family: var(--font-sans);
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection {
+        background: rgba(29, 77, 79, 0.15);
+        color: var(--color-text-primary);
+    }
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--color-bg-primary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #D1CDBC;
+        border-radius: 3px;
+    }
+}
+
+/* ─── Aesthetics Overrides ───────────────────────────────── */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Hide Orbs */
+.orb {
+    display: none !important;
+}
+
+/* ─── Clean Minimalist Card ─────────────────────────────── */
+.glass {
+    background: #ffffff;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.glass:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: 0 4px 20px rgba(29, 77, 79, 0.08);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* ─── Solid Accent Text ──────────────────────────────────── */
+.gradient-text {
+    color: #1D4D4F;
+    background: none;
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+}
+
+.gradient-text-warm {
+    color: #2D6A6D;
+}
+
+/* ─── Badge ──────────────────────────────────────────────── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: none;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border: 1px solid rgba(29, 77, 79, 0.1);
+}
+
+/* ─── Section Styles ─────────────────────────────────────── */
+.section-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* ─── Minimalist Buttons ─────────────────────────────────── */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: var(--color-accent);
+    color: #F4F1E8;
+    transition: all 0.25s ease;
+    border: 1px solid var(--color-accent);
+}
+
+.btn-primary:hover {
+    background: #2D6A6D;
+    border-color: #2D6A6D;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--color-accent-soft);
+    transform: translateY(-1px);
+}
+
+/* ─── Timeline ───────────────────────────────────────────── */
+.timeline-line {
+    position: absolute;
+    left: 16px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: rgba(29, 77, 79, 0.1);
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: none;
+    border: 3px solid var(--color-bg-primary);
+    flex-shrink: 0;
+}
+
+/* ─── Nav ────────────────────────────────────────────────── */
+.nav-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+/* ─── Skill Pill ─────────────────────────────────────────── */
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: #ffffff;
+    color: var(--color-text-secondary);
+    border: 1px solid rgba(29, 77, 79, 0.1);
+    transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ─── Dot Grid ───────────────────────────────────────────── */
+.dot-grid {
+    background-image: radial-gradient(rgba(29, 77, 79, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* ─── Typewriter ─────────────────────────────────────────── */
+.typewriter-cursor {
+    background: var(--color-accent);
+}
+
+/* ─── Form ────────────────────────────────────────────────── */
+.form-input {
+    background: #ffffff;
+    border: 1px solid rgba(29, 77, 79, 0.15);
+    color: var(--color-text-primary);
+}
+
+.form-input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+
+/* ─── Code Tag ───────────────────────────────────────────── */
+.code-tag {
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    border: 1px solid rgba(29, 77, 79, 0.1);
+}
