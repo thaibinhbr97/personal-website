@@ -62,7 +62,7 @@ export default function Footer() {
                     <div style={{ display: "flex", gap: 20 }}>
                         {[
                             { href: "https://github.com/thaibinhbr97", label: "GitHub" },
-                            { href: "https://linkedin.com/in/thaibinhbr97", label: "LinkedIn" },
+                            { href: "https://linkedin.com/in/bradnguyen", label: "LinkedIn" },
                             { href: "mailto:brad.nguyen.uw@gmail.com", label: "Email" },
                         ].map((s) => (
                             <a
